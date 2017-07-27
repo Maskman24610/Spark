@@ -15,8 +15,8 @@ public class sparkCon {
   public static void main(String[] args) {
 	  SparkConf conf = new SparkConf().setMaster("local").setAppName("firstSpark");
 	  JavaSparkContext sc = new JavaSparkContext(conf); 
-	  JavaRDD<String> lines = sc.textFile("test.html");
-	  JavaRDD<String> filterLines = lines.filter(line -> line.contains("鈦坦"));
+	  JavaRDD<String> lines = sc.textFile("README.md");
+	  JavaRDD<String> filterLines = lines.filter(line -> line.contains("Python"));
 	  System.out.println(lines.count());
 	  System.out.println("The first of test.html is" +lines.first());
 	  System.out.println(filterLines.first()+", 過濾後的行數："+filterLines.count());
